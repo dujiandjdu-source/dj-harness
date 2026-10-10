@@ -1,5 +1,7 @@
 # DJ Harness
 
+English | [中文](README.zh.md)
+
 Personal Windows desktop assistant for game development, based on [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). The agent framework and MIT credits are preserved; native DeepSeek sign-in is replaced with an API-first workspace and personal branding.
 
 - API providers: OpenAI, Grok (xAI), DeepSeek, and custom compatible endpoints.
@@ -14,8 +16,6 @@ The following section preserves upstream documentation and attribution; upstream
 ---
 
 # DeepSeek Harness
-
-English | [中文](README.zh.md)
 
 DeepSeek Harness (`dsh`) is an open-source agent harness developed by [DeepSeek AI](https://deepseek.com).
 

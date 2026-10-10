@@ -1,5 +1,7 @@
 # DJ Harness
 
+[English](README.md) | 中文
+
 基于 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的个人 Windows 游戏开发助手。保留 agent 框架与 MIT 版权信息，以直接进入工作区和 API 设置取代原生 DeepSeek 登录，使用个人品牌。
 
 - 接入 OpenAI、Grok（xAI）、DeepSeek 与自定义兼容接口。
@@ -7,15 +9,13 @@
 - 保留本地会话、工具、终端、计划与审批。
 - 默认停用账户服务、官方上传与遥测。
 
-阅读[个人桌面版说明](docs/personal-harness.md)，从 [Releases](https://github.com/dujiandjdu-source/dj-harness/releases) 下载安装包。API 密钥在本机配置，不随应用发布；ChatGPT 订阅与 OpenAI API 接入分开。
+阅读[个人桌面版说明](docs/personal-harness.zh.md)，从 [Releases](https://github.com/dujiandjdu-source/dj-harness/releases) 下载安装包。API 密钥在本机配置，不随应用发布；ChatGPT 订阅与 OpenAI API 接入分开。
 
 以下保留上游文档与署名；其中的上游发布地址不用于配置 DJ Harness。
 
 ---
 
 # DeepSeek Harness
-
-[English](README.md) | 中文
 
 DeepSeek Harness（`dsh`）是由 [DeepSeek AI](https://deepseek.com) 开发的开源 agent harness（智能体框架）。
 

@@ -1,0 +1,25 @@
+# Bilingual-pair consistency record for personal-harness.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write docs/personal-harness.md
+/:
+  en: 865dbbae6ef98734
+  zh: 507dd8c7f12578d2
+/dj-harness-personal-desktop:
+  en: 98393c24f56ccaa0
+  zh: fdd9ea70310ace04
+/dj-harness-personal-desktop/summary:
+  en: 27b807338991595b
+  zh: 5f551498690ccfec
+/dj-harness-personal-desktop/api-configuration:
+  en: 942d545b2990b3c2
+  zh: 2a154a8a2e741459
+/dj-harness-personal-desktop/game-development-workflows:
+  en: 6fcff14554bf2c79
+  zh: 9d970fc7543440f8
+/dj-harness-personal-desktop/local-files-and-privacy:
+  en: a3324832a2cfa513
+  zh: 4eb3d066a32c77ef
+/dj-harness-personal-desktop/validation-limits:
+  en: 33fcf81a0682b6eb
+  zh: e2f27d9eebec5c2e
