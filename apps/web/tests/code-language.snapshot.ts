@@ -44,6 +44,16 @@ it('replays highlighted Python stubs, PowerShell and CSV reads with their docume
     const sessionId = await settled
     const session = scaffold.ctx.agents.get(sessionId)?.session
     if (session === undefined) throw new Error('read turn has no Session')
+    const system = session.deriveMessages().find(message => message.role === 'system')
+    const persona = system?.content.flatMap(block => block.type === 'text' ? [block.text] : [])
+      .join('\n').split('\n\n').find(paragraph => paragraph.startsWith('You are DJ Harness,'))
+    expect(persona).toBeDefined()
+    const brand = await page.getByRole('button', { name: 'New session', exact: true }).first().textContent()
+    expect(brand).toBe('DJ Harness')
+    await compareOrRefreshGolden(
+      fileURLToPath(new URL('./expected/personal-harness/model-and-brand.expected.md', import.meta.url)),
+      `# Personal Harness\n\nBrand: ${brand}\n\n${persona}`, MODE,
+    )
     const reads = session.snapshotEvents().flatMap(event => event.type === 'tool/result' ? [event.data.meta] : [])
     expect(reads).toHaveLength(FILES.length)
     for (const file of FILES) {

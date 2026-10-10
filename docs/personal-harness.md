@@ -28,3 +28,7 @@ On Windows, run DJ Harness.exe in win-unpacked and keep the entire directory; co
 ## Validation limits
 
 Skills supply workflow guidance. This distribution does not connect to a running Unreal or Unity editor. Source builds and adapter mock tests do not establish real API-key availability and do not replace engine loading, PIE or packaging checks. GitHub publication requires the user's own repository and authentication; nothing is pushed to upstream.
+
+## Build the personal preview
+
+Install dependencies with pnpm install --frozen-lockfile. If apps/desktop/.env.windows does not exist, copy apps/desktop/.env.windows.personal.example there. Keep an existing file intact. Run pnpm --filter @deepseek-ai/dsh-desktop run package:win:x64:unsigned --build-version followed by the exact confirmed build version. The Desktop packaging policy requires confirming that version before each packaging run. API keys are unnecessary for building.

@@ -28,3 +28,7 @@ Windows 运行 win-unpacked 目录里的 DJ Harness.exe，保留整个目录；�
 ## 验证边界
 
 Skills 提供工作流指导，当前没有连接正在运行的 UE 或 Unity 编辑器。源码构建与适配器模拟测试不能证明真实 API 密钥可用，也不能替代引擎加载、PIE 或打包验证。GitHub 发布需要用户自己的仓库及可用的认证，不向上游仓库推送。
+
+## 构建个人预览版
+
+使用 pnpm install --frozen-lockfile 安装依赖。仅在 apps/desktop/.env.windows 不存在时，将 apps/desktop/.env.windows.personal.example 复制到该位置，保留已有文件。执行 pnpm --filter @deepseek-ai/dsh-desktop run package:win:x64:unsigned --build-version，随后填写已确认的完整构建版本。桌面打包约定要求每次打包前确认该版本，构建无需 API 密钥。
