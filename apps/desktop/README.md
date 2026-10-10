@@ -24,6 +24,8 @@ Desktop microphone access is restricted to audio requests from the primary `dsh-
 
 Press F12 (Fn+F12 on media-key keyboards), Command+Option+I on macOS, or Ctrl+Shift+I on Windows to toggle DevTools for the focused application page, including in packaged builds. These native shortcuts use hidden application-menu items. Update overlays and packaged embedded browser guests disable DevTools.
 
+> DJ Harness personal distribution opens the workspace without native sign-in or an API-key gate. It does not publish Platform sessions or consult the vendor mandatory-update service. Unsigned local packages omit update feeds and carry personal skills under resources/skills. The remaining upstream release documentation describes upstream infrastructure, not this personal distribution.
+
 ## Terminal command
 
 The application menu's **Manage dsh Command…** entry, immediately below **Check for Updates…**, shows the current command and offers Install, Repair, and Remove. The command uses Desktop's installed runtime and the ordinary [dsh CLI](../cli/README.md), including when the Desktop application is closed. Open a new terminal after installation and run `dsh --version`.

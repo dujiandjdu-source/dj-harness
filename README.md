@@ -1,3 +1,18 @@
+# DJ Harness
+
+Personal Windows desktop assistant for game development, based on [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). The agent framework and MIT credits are preserved; native DeepSeek sign-in is replaced with an API-first workspace and personal branding.
+
+- API providers: OpenAI, Grok (xAI), DeepSeek, and custom compatible endpoints.
+- Bundled Unreal Engine and Unity workflows for programming, technical art, shaders, assets and performance.
+- Local sessions, tools, terminal, plans and approval controls.
+- Default account services, vendor uploads and telemetry are disabled.
+
+See [personal desktop guide](docs/personal-harness.md). Download the Windows installer from [Releases](https://github.com/dujiandjdu-source/dj-harness/releases). API keys are configured locally and are never included in releases. ChatGPT subscription is separate from OpenAI API access.
+
+The following section preserves upstream documentation and attribution; upstream release endpoints do not configure DJ Harness.
+
+---
+
 # DeepSeek Harness
 
 English | [中文](README.zh.md)

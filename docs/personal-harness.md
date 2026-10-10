@@ -1,27 +1,28 @@
-# Personal Game Development Harness
+---
+description: "DJ Harness 个人桌面版的启动、API 配置和能力边界。"
+kind: "user-guide"
+---
 
-本仓库保留 DeepSeek Harness 的插件和 profile 机制，并通过项目级 `.dsh/skills` 注入个人的通用 Unreal Engine 与 Unity 工作流。
+# DJ Harness 个人桌面版
 
-## 当前改造范围
+## 概述
 
-- `personal-ue-development`：UE 工程检查、技术美术、程序、材质、Shader、性能和编辑器工具的通用流程。
-- `personal-unity-development`：Unity 工程、渲染管线、资源、Shader、性能和编辑器工具的通用流程。
+DJ Harness 保留上游的 agent loop、工具、会话、审批、计划和 Skills，以个人游戏开发工作流替换登录入口和品牌呈现。首次启动直接进入工作区，没有 API 密钥时仍可管理设置和选择项目。
 
-这些 skill 是可复用工作流，不包含某个项目的绝对路径、版本锁定或自动删除资产的权限。它们会先要求只读检查、预览影响范围和实际验证。
+## API 配置
 
-## 本地运行
+打开设置中的模型页面，分别填写 OpenAI、Grok (xAI) 或 DeepSeek 的 API 密钥，启用所需模型，并在会话模型选择器中选择对应路由。OpenAI 和 xAI 使用随适配器安装的模型目录；可编辑模型列表或添加 OpenAI 兼容的自定义提供方，填写 endpoint、协议与模型 ID。模型能力由实际提供方决定，切换不保证上下文长度、图像输入或工具协议完全相同。
 
-在仓库根目录安装依赖后，使用本地 Harness home：
+密钥通过本机 credentials 服务保存，配置只保存 OPENAI_API_KEY、XAI_API_KEY、DEEPSEEK_API_KEY 等引用。密钥不会被写入本仓库，也不随应用发布。OpenAI 接入使用 API 平台密钥，ChatGPT 网页订阅不充当 API 凭据。
 
-```powershell
-$env:DSH_HOME = 'D:\Harness\deepseek-harness\.dsh-home'
-pnpm dsh web --no-open
-```
+## 游戏开发工作流
 
-也可以直接运行仓库根目录的 `start-personal-harness.ps1`。启动时会打印带访问令牌的本地 URL；请使用该完整 URL 打开 Web UI。关闭启动终端会停止本地服务。
+桌面应用在每个工作区发现随包的 personal-ue-development 和 personal-unity-development Skills，仍优先遵循当前项目的同名工作流和 AGENTS.md。UE 工作流覆盖程序、技术美术、材质、Shader、资源与性能分析，Unity 工作流覆盖对应的工程和渲染管线问题。先检查实际引擎版本，当前不承诺任何特定 UE6 API。
 
-默认 Web UI 地址为 `http://127.0.0.1:3080`。从仓库根目录启动时，Harness 的 filesystem skill provider 会发现 `.dsh/skills`，因此项目 skill 可在会话中按需加载。也可以在 Web UI 中输入 `/personal-ue-development` 或 `/personal-unity-development` 进行显式调用。
+## 本地文件与隐私
 
-## 设计边界
+Windows 运行 win-unpacked 目录里的 DJ Harness.exe，保留整个目录；单独复制 EXE 不可运行。默认 Harness 数据位于 Electron 用户目录的 harness 子目录；显式 DSH_HOME 可以覆盖位置。API 密钥和会话属于本机数据。个人版默认停用 DeepSeek 账户、官方日志上传、产品及会话遥测、官方插件清单、官方联网搜索和上游强制更新；用户选择的模型提供方仍会接收模型请求。
 
-本次改造没有修改 agent loop，也没有授予新的 Shell、文件系统或 Unreal 权限。要让 Harness 实际操作 UE/Unity，需要后续增加引擎适配器或 MCP/本地服务；当前 skill 负责稳定工作流程和输出口径。
+## 验证边界
+
+Skills 提供工作流指导，当前没有连接正在运行的 UE 或 Unity 编辑器。源码构建与适配器模拟测试不能证明真实 API 密钥可用，也不能替代引擎加载、PIE 或打包验证。GitHub 发布需要用户自己的仓库及可用的认证，不向上游仓库推送。

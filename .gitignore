@@ -48,3 +48,6 @@ worktrees/
 .typert-*/
 native/system/test/bin/
 .dsh-home/
+
+# Local personal build diagnostics
+personal-*.log

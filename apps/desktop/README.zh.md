@@ -24,6 +24,8 @@ Desktop Host 的 Platform API 请求与更新策略请求用相同的 Platform �
 
 按 F12（多媒体功能键键盘上为 Fn+F12）、macOS 的 Command+Option+I 或 Windows 的 Ctrl+Shift+I，可切换当前获得焦点的应用页面的 DevTools，打包版本同样支持。这些原生快捷键通过隐藏的应用菜单项注册。更新遮罩和打包版本的内嵌浏览器禁用 DevTools。
 
+> DJ Harness 个人版直接进入工作区，无须原生登录或预先填写 API 密钥。个人版不发布平台账户会话，也不查询上游强制更新服务。本地未签名包不携带更新源，个人 Skills 随包放在 resources/skills。下文保留的上游发布资料描述上游基础设施，不代表个人版配置。
+
 ## 终端命令
 
 应用菜单中的**管理 dsh 命令…**位于**检查更新…**下方，显示当前命令，并提供安装、修复和移除操作。命令复用 Desktop 已安装的运行时和普通 [dsh CLI](../cli/README.zh.md)，Desktop 应用关闭后也可以使用。安装后打开新终端，运行 `dsh --version`。
